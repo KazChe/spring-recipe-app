@@ -40,7 +40,7 @@ public class Recipe {
         this.ingredients = ingredients;
     }
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recip")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
     private Set<Ingredient> ingredients;
 
     //todo add
