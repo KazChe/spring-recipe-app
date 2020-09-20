@@ -43,8 +43,8 @@ public class Recipe {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
     private Set<Ingredient> ingredients;
 
-    //todo add
-    // private Difficulty difficulty;
+    @Enumerated(value = EnumType.STRING) // uses the String value instead or ORDINAL (i.e 1, 2, or 3)
+    private Difficulty difficulty;
 
 
     public Notes getNotes() {
@@ -117,5 +117,13 @@ public class Recipe {
 
     public void setImage(Byte[] image) {
         this.image = image;
+    }
+
+    public Difficulty getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(Difficulty difficulty) {
+        this.difficulty = difficulty;
     }
 }
